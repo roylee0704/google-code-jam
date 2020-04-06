@@ -110,7 +110,10 @@ func (mi *MyInput) readWords() []string {
 ////////////////////////////////////////////////////////////////////////////////
 
 func main() {
-	f, _ := os.Open("sample.in")
+
+	//f, _ := os.Open("sample.in")
+	f := bufio.NewReader(os.Stdin)
+
 	in := MyInput{rdr: f}
 	t := in.readInt()
 	for caseNo := 1; caseNo <= t; caseNo++ {
